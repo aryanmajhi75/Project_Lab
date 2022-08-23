@@ -15,8 +15,9 @@ class _priorityPicker extends State<priorityPicker> {
 
   final _type=["University","Department","School","Course","CSA","Labyrinth","Nuts and Bolts","CAPS"];
   final _priorityVal=[1,2,3,4,5,5,5,5];
-  String? _isSelectedVal="";
-  double? _priority=0;
+  String _isSelectedVal="University";
+  int _priority=1;
+  int _index=0;
 
   @override
 
@@ -37,7 +38,9 @@ class _priorityPicker extends State<priorityPicker> {
           onChanged: (val) {
             setState((){
               _isSelectedVal=val as String;
-              //_priority=
+              _index=_type.indexOf(_isSelectedVal);
+              _priority=_priorityVal[_index];
+              print(_priority);
             });
           },
           borderRadius: BorderRadius.circular(10),

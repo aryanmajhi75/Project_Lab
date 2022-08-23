@@ -7,6 +7,7 @@ import 'datepicker.dart';
 import 'button.dart';
 import 'specificPurposebutton.dart';
 import 'dataTable.dart';
+import 'priorityPicker.dart';
 // import 'package:flutter/src/material/animated_icons.dart';
 // import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -47,12 +48,14 @@ class Homepage extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-              Padding(
+              Padding(                                      //for selecting location
                 padding: const EdgeInsets.all(8.0),
                 child: dropDown(),
               ),
               SizedBox(height: 10,),
-              Button(title: "Search",width: 100,),
+              priorityPicker(),
+              SizedBox(height: 10,),
+              Button(title: "Search",width: 100,),          //search button
               SizedBox(height: 10,),
               datePicker(),
               SizedBox(height: 10,),

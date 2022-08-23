@@ -13,7 +13,7 @@ class _dropDown extends State<dropDown> {
   }
 
   final _location=["Block 1","Block 2","Block 3","Block 4","Main Auditorium"];
-  String? _isSelectedVal="";
+  String _isSelectedVal="Block 1";
   @override
 
   Widget build(BuildContext context){
@@ -33,6 +33,7 @@ class _dropDown extends State<dropDown> {
         onChanged: (val) {
         setState((){
         _isSelectedVal=val as String;
+        //print(_location.indexOf(_isSelectedVal));
         });
         },
         borderRadius: BorderRadius.circular(10),
