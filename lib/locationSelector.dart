@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:project_lab/default.dart';
 
-class dropDown extends StatefulWidget{
-  const dropDown({super.key});
+class locationSel extends StatefulWidget{
+  const locationSel({super.key});
 
   @override
-  State<dropDown> createState() => _dropDown();
+  State<locationSel> createState() => _locationSel();
 }
-class _dropDown extends State<dropDown> {
+class _locationSel extends State<locationSel> {
 
-  _dropDown(){
+  _locationSel(){
     _isSelectedVal=_location[0];
   }
 
@@ -17,13 +18,17 @@ class _dropDown extends State<dropDown> {
   @override
 
   Widget build(BuildContext context){
-  return Column(
-    mainAxisAlignment: MainAxisAlignment.start,
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      DropdownButtonFormField(
-          icon: Icon(
-          color: Color(0xff050101),
+  return Container(
+    height: 70,
+      padding: const EdgeInsets.only(left: 5,right: 5,),
+        child: DropdownButtonFormField(
+        style: TextStyle(
+          fontSize: 12,
+           color: darkbackgroundColor,
+          fontWeight: FontWeight.bold,
+        ),
+        icon: Icon(
+          color: darklabelbgColor,
         Icons.keyboard_arrow_down_rounded,
         ),
         value: _isSelectedVal,
@@ -38,19 +43,25 @@ class _dropDown extends State<dropDown> {
         },
         borderRadius: BorderRadius.circular(10),
         decoration: InputDecoration(
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(
+          color: Colors.transparent,
+          ),
+        ),
+        labelText: "Location",
+        labelStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+        ),
         iconColor: Colors.black,
-
+        focusColor: hoverColor,
         floatingLabelStyle: TextStyle(
-        fontSize: 16,
+        fontSize: 14,
         fontWeight: FontWeight.bold,
         color: Colors.black,
         ),
-        labelText: "Location",
         ),
         iconSize: 32,
-
         ),
-    ],
   );
   }
 }

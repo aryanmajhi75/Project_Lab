@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 
-  const lightbackgroundColor=Color(0xff4A8CA0);
-  const lightbuttonColor=Color(0xffF21456);
-  const lightfontColor=Color(0xffFFFFFF);
-  const lightnavbarColor=Color(0xff05030E);
-  const lighticonColor=Color(0xffD9D9D9);
-  const lightlabelbgColor=Color(0xffD9D9D9);
+  const darkbackgroundColor=Color(0xff181818);
+  const darkbuttonColor=Color(0xff9a5de9);
+  const fontColor=Color(0xff191918);
+  const hoverColor=Color(0xffB2B1B1);
+  const darkfieldColor=Color(0xfffcfff7);
+  const darknavbarColor=Color(0xff05030E);
+  const darkiconColor=Color(0xffD9D9D9);
+  const darklabelbgColor=Color(0xffedb021);
+  const glassbgColor=Color(0x76b6b3b3);

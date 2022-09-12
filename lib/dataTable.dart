@@ -5,50 +5,40 @@ class dataTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DataTable(
-      columns: const <DataColumn>[
-        DataColumn(
-          label: Text(
-            'Name',
-            style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white,),
-          ),
+
+    //data table headers
+    var myCols=[
+      DataColumn(label: new Text("Event")),
+      DataColumn(label: new Text("Start Time")),
+      DataColumn(label: new Text("End Time")),
+    ];
+
+    //data table rows
+    var myRows=[
+      new DataRow(cells: [
+        new DataCell(new Text("Tech Talk")),
+        new DataCell(new Text("11:00")),
+        new DataCell(new Text("13:00")),
+      ]),
+      new DataRow(cells: [
+        new DataCell(new Text("Inaugeration")),
+        new DataCell(new Text("11:00")),
+        new DataCell(new Text("12:00")),
+      ]),
+      new DataRow(cells: [
+        new DataCell(new Text("Darpan")),
+        new DataCell(new Text("08:00")),
+        new DataCell(new Text("16:00")),
+      ]),
+    ];
+
+    return Container(
+      child: DataTable(
+          columns: myCols,
+          rows: myRows,
+          sortColumnIndex: 0,
+          sortAscending: true,
         ),
-        DataColumn(
-          label: Text(
-            'Age',
-            style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white,),
-          ),
-        ),
-        DataColumn(
-          label: Text(
-            'Role',
-            style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white,),
-          ),
-        ),
-      ],
-      rows: const <DataRow>[
-        DataRow(
-          cells: <DataCell>[
-            DataCell(Text('Sarah')),
-            DataCell(Text('19')),
-            DataCell(Text('Student')),
-          ],
-        ),
-        DataRow(
-          cells: <DataCell>[
-            DataCell(Text('Janine')),
-            DataCell(Text('43')),
-            DataCell(Text('Professor')),
-          ],
-        ),
-        DataRow(
-          cells: <DataCell>[
-            DataCell(Text('William')),
-            DataCell(Text('27')),
-            DataCell(Text('Associate Professor')),
-          ],
-        ),
-      ],
     );
   }
 }

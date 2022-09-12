@@ -10,12 +10,15 @@ class Button extends StatelessWidget{
   Widget build(BuildContext context){
     return SizedBox(
       width: width,
-      child: MaterialButton(
-        color: lightbuttonColor,
+      child: ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all(darklabelbgColor),
+        ),
         onPressed: (){},
         child: Text(title,
           style: TextStyle(
-            color: Colors.white,
+            color: darkbackgroundColor,
+            fontSize: 15,
           ),
         ),
       ),

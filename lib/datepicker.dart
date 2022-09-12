@@ -1,41 +1,65 @@
 import 'package:flutter/material.dart';
-import 'default.dart';
-import 'button.dart';
+import 'package:intl/intl.dart';
+import 'package:project_lab/default.dart';
 
 class datePicker extends StatefulWidget {
-  const datePicker({super.key});
-
   @override
-  State<datePicker> createState() => _datePicker();
+  _datePicker createState() => _datePicker();
 }
+
 class _datePicker extends State<datePicker> {
 
-  //DateTime _dateToday = DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day) ;
-  //DateTime _dateRange=DateTime(DateTime.now().year);
+  TextEditingController _controller= TextEditingController();
 
-  void _showdatePicker(){
-    showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),//_dateToday,
-        firstDate: DateTime(2022),//_dateRange,
-        lastDate: DateTime(2022),//_dateRange,
+  void pickdate()async{
+    DateTime? _date= await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(DateTime.now().year - 1),
+      lastDate: DateTime(DateTime.now().year + 1),
     );
+      if(_date!= null){
+        setState((){
+          _controller.text=DateFormat('dd-MM-yyyy').format(_date);
+        });
+    }
   }
 
   @override
-  Widget build(BuildContext context){
-   return Column(
-       crossAxisAlignment: CrossAxisAlignment.start,
-       mainAxisAlignment: MainAxisAlignment.start,
-       children: [
-         SizedBox(
-           width: 300,
-           child: TextField(
-             readOnly: true,
-           ),
-         ),
-         Button(title: "Pick Date",width: 100,),
-       ],
-   );
+  Widget build(BuildContext context) {
+    return TextField(
+          controller: _controller,
+          readOnly: true,
+          decoration: InputDecoration(
+            labelText: "Select a Date",
+            labelStyle: TextStyle(
+              fontSize: 14,
+              color: darklabelbgColor,
+            ),
+            icon: Icon(
+              Icons.calendar_today_rounded,
+              color: darklabelbgColor,),
+            border: OutlineInputBorder(
+              gapPadding: 8,
+              borderSide: const BorderSide(
+                  color: darklabelbgColor,
+                  width: 2.0
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              gapPadding: 10,
+              borderSide: const BorderSide(
+                  color: darklabelbgColor,
+                  width: 2.0
+              ),
+            ),
+          ),
+          maxLines: 1,
+          onTap: pickdate,
+          style: TextStyle(
+            fontSize: 14,
+            color: darkfieldColor,
+          ),
+      );
   }
 }

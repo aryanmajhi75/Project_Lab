@@ -10,8 +10,13 @@ class specificPurposeButton extends StatelessWidget{
   Widget build(BuildContext context){
     return SizedBox(
       width: width,
-      child: MaterialButton(
-        color: lightbuttonColor,
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          side: BorderSide(
+            color: darklabelbgColor,
+            width: 2,
+          ),
+        ),
         onPressed: () {
           final snackBar = SnackBar(
             content: const Text('Request Sent'),
@@ -24,6 +29,7 @@ class specificPurposeButton extends StatelessWidget{
         },
         child: Text(title,
           style: TextStyle(
+            fontSize: 22,
             color: Colors.white,
           ),
         ),

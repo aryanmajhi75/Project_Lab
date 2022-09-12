@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "949941950517",
+    "firebase_url": "https://aryan-modules-default-rtdb.firebaseio.com",
+    "project_id": "aryan-modules",
+    "storage_bucket": "aryan-modules.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949941950517:android:e4ff4f57c1119734f1b97c",
+        "android_client_info": {
+          "package_name": "com.example.project_lab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949941950517-rlp722n2kjv3shnmtjk2qj1jq5ji3nce.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADvU19UYQabl3JiokM_47jXw9dmj-Mgvk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949941950517-rlp722n2kjv3shnmtjk2qj1jq5ji3nce.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

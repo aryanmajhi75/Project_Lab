@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_lab/default.dart';
 
 class priorityPicker extends StatefulWidget{
   const priorityPicker({super.key});
@@ -22,13 +23,18 @@ class _priorityPicker extends State<priorityPicker> {
   @override
 
   Widget build(BuildContext context){
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        DropdownButtonFormField(
+    return Container(
+      height: 70,
+      padding: const EdgeInsets.only(left: 5,right: 5,),
+      child: DropdownButtonFormField(
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+            color: darkbackgroundColor,
+          ),
+          dropdownColor: darkfieldColor,
           icon: Icon(
-            color: Color(0xff050101),
+            color: darklabelbgColor,
             Icons.keyboard_arrow_down_rounded,
           ),
           value: _isSelectedVal,
@@ -40,31 +46,30 @@ class _priorityPicker extends State<priorityPicker> {
               _isSelectedVal=val as String;
               _index=_type.indexOf(_isSelectedVal);
               _priority=_priorityVal[_index];
-              print(_priority);
+              //print(_priority);
             });
           },
           borderRadius: BorderRadius.circular(10),
           decoration: InputDecoration(
+            enabledBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Colors.transparent,
+              ),
+            ),
+            labelText: "Category",
+            labelStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
             iconColor: Colors.black,
-
             floatingLabelStyle: TextStyle(
-              fontSize: 16,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
-            labelText: "Category",
           ),
           iconSize: 32,
 
         ),
-      ],
     );
   }
 }
-
-// extension IndexedIterable<E> on Iterable{
-//   Iterable<T> mapindex<T> (T Function(E element,int index) f){
-//     var index=0;
-//     return map((e) => f(e, index++));
-//   }
-// }
