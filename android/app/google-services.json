@@ -30,6 +30,13 @@
             {
               "client_id": "949941950517-rlp722n2kjv3shnmtjk2qj1jq5ji3nce.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "949941950517-itk38jk42qcd2843m3qu3ocd89ju277l.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.projectLab"
+              }
             }
           ]
         }

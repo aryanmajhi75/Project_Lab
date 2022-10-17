@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:project_lab/default.dart';
 
@@ -15,8 +16,23 @@ class _locationSel extends State<locationSel> {
 
   final _location=["Block 1","Block 2","Block 3","Block 4","Main Auditorium"];
   String _isSelectedVal="Block 1";
-  @override
 
+  List<String> docId=[];
+  Future getDocId() async{
+    await FirebaseFirestore.instance.collection('location').get().then(
+          (snapshot) => snapshot.docs.forEach((element) {
+          print(element.reference);
+        }
+      ),
+    );
+  }
+  @override
+  void initState() {
+    getDocId();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context){
   return Container(
     height: 70,
@@ -32,6 +48,10 @@ class _locationSel extends State<locationSel> {
         Icons.keyboard_arrow_down_rounded,
         ),
         value: _isSelectedVal,
+        // items: snapshot.data!.docs.map((DocumentSnapshot document){
+        //
+        // }
+        // ),
         items: _location.map(
         (e) => DropdownMenuItem(child: Text(e),value: e,)
         ).toList(),

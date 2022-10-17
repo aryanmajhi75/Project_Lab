@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:project_lab/default.dart';
 import 'package:project_lab/locBooking.dart';
 import 'package:project_lab/navbar.dart';
@@ -31,6 +32,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var _mqheight= MediaQuery.of(context).size.height;
     return DefaultTabController(
       length: tabOption.length,
       child: Scaffold(
@@ -61,13 +63,22 @@ class _HomePageState extends State<HomePage> {
         extendBody: true,
         body: ListView(
           children: [
-
-            SizedBox(
-              height: 700,
-              child: Tabbar(
-                tabOptions: tabOption,
+            Container(
+              height: _mqheight*0.4,
+              child: Lottie.network(
+                'https://assets7.lottiefiles.com/packages/lf20_98vgucqb.json',
+                animate: true,
               ),
+              //child: ,
             ),
+            SingleChildScrollView(
+                child: SizedBox(
+                  height: 500,
+                  child: Tabbar(
+                    tabOptions: tabOption,
+                  ),
+                ),
+              ),
           ],
         ),
         bottomNavigationBar: Padding(

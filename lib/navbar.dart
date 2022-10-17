@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_lab/loadingPage.dart';
 import 'default.dart';
-import 'loadingPage.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class Navbar extends StatelessWidget {

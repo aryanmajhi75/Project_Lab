@@ -21,8 +21,8 @@ class Glass extends StatelessWidget{
         padding: const EdgeInsets.all(2.0),
         child: BackdropFilter(
           filter: ImageFilter.blur(
-            sigmaX: 10,
-            sigmaY: 10,
+            sigmaX: 2,
+            sigmaY: 2,
           ),
           child: Container(
             alignment: Alignment.center,

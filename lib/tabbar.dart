@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
+import 'package:project_lab/default.dart';
+
 class Tabbar extends StatelessWidget{
   final List tabOptions;
 
@@ -16,6 +18,7 @@ class Tabbar extends StatelessWidget{
     return Column(
       children: [
         TabBar(
+          indicatorColor: darklabelbgColor,
           tabs: [
           Tab(
 

@@ -9,4 +9,4 @@ import 'package:flutter/material.dart';
   const darknavbarColor=Color(0xff05030E);
   const darkiconColor=Color(0xffD9D9D9);
   const darklabelbgColor=Color(0xffedb021);
-  const glassbgColor=Color(0x76b6b3b3);
+  const glassbgColor=Color(0x5ab6b3b3);
